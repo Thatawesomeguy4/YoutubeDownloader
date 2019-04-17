@@ -127,9 +127,6 @@
     <Compile Include="AudioCopyPage.xaml.cs">
       <DependentUpon>AudioCopyPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AudioCopyWindow.xaml.cs">
-      <DependentUpon>AudioCopyWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DownloadHomePage.xaml.cs">
       <DependentUpon>DownloadHomePage.xaml</DependentUpon>
     </Compile>
@@ -144,10 +141,6 @@
       <DependentUpon>VideoInfoPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AudioCopyPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AudioCopyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

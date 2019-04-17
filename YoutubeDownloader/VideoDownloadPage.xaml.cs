@@ -116,6 +116,7 @@ namespace YoutubeDownloader
         private void AudioButton_Click(object sender, RoutedEventArgs e)
         {
             AudioCopyPage audioPage = new AudioCopyPage(this.fileName);
+            NavigationService.Navigate(audioPage);
         }
     }
 }
