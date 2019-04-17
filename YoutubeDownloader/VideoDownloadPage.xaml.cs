@@ -33,6 +33,7 @@ namespace YoutubeDownloader
         private bool finished;
         private Thread download;
         private String downloadPath;
+        private string fileName;
 
         public VideoDownloadPage(object sender, string url, String path)
         {
@@ -64,6 +65,7 @@ namespace YoutubeDownloader
                 {
                     using (var outFile = File.OpenWrite(downloadPath + "/" + video.FullName))
                     {
+                        this.fileName = downloadPath + "/" + video.FullName;
                         using (var ps = new ProgressStream(outFile))
                         {
                             long streamLength = (long)video.StreamLength();
@@ -95,7 +97,13 @@ namespace YoutubeDownloader
 
             this.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
             {
+                this.cancelButton.IsEnabled = false;
+            }));
+
+            this.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
+            {
                 this.doneButton.IsEnabled = true;
+                this.audioButton.IsEnabled = true;
             }));
         }
 
@@ -103,6 +111,12 @@ namespace YoutubeDownloader
         {
             download.Abort();
             this.NavigationService.GoBack();
+        }
+
+        private void AudioButton_Click(object sender, RoutedEventArgs e)
+        {
+            AudioCopyPage audioPage = new AudioCopyPage(this.fileName);
+            NavigationService.Navigate(audioPage);
         }
     }
 }
