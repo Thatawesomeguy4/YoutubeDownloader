@@ -95,6 +95,11 @@ namespace YoutubeDownloader
 
             this.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
             {
+                this.cancelButton.IsEnabled = false;
+            }));
+
+            this.Dispatcher.Invoke(DispatcherPriority.Normal, new Action(delegate ()
+            {
                 this.doneButton.IsEnabled = true;
             }));
         }

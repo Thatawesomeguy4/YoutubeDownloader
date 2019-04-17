@@ -10,7 +10,7 @@
     <Grid Background="Black" Margin="0,0,0,-0.2">
         <ProgressBar x:Name="downloadProgressBar" HorizontalAlignment="Left" Height="29" Margin="30,70,0,0" VerticalAlignment="Top" Width="738"/>
         <Label Content="Download Progress" Foreground="Snow" HorizontalAlignment="Left" Margin="344,30,0,0" VerticalAlignment="Top"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="118,245,0,0" VerticalAlignment="Top" Width="179" Height="55" Click="Button_Click"/>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="118,245,0,0" VerticalAlignment="Top" Width="179" Height="55" Click="Button_Click"/>
         <Button x:Name="doneButton" Content="Done" HorizontalAlignment="Left" Margin="474,245,0,0" VerticalAlignment="Top" Width="179" Height="55" Click="DoneButton_Click"/>
         <Label x:Name="downPercent" Content="0%" HorizontalAlignment="Left" Margin="395,73,0,0" VerticalAlignment="Top"/>
         <Label Content="Time Elapsed:" Foreground="Snow" HorizontalAlignment="Left" Margin="161,121,0,0" VerticalAlignment="Top"/>
