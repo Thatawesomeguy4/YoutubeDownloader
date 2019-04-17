@@ -1,0 +1,22 @@
+﻿<Page x:Class="YoutubeDownloader.VideoDownloadPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:YoutubeDownloader"
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="VideoDownloadPage" Height="331.0">
+
+    <Grid Background="Black" Margin="0,0,0,-0.2">
+        <ProgressBar x:Name="downloadProgressBar" HorizontalAlignment="Left" Height="29" Margin="30,70,0,0" VerticalAlignment="Top" Width="738"/>
+        <Label Content="Download Progress" Foreground="Snow" HorizontalAlignment="Left" Margin="344,30,0,0" VerticalAlignment="Top"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="118,245,0,0" VerticalAlignment="Top" Width="179" Height="55" Click="Button_Click"/>
+        <Button x:Name="doneButton" Content="Done" HorizontalAlignment="Left" Margin="474,245,0,0" VerticalAlignment="Top" Width="179" Height="55" Click="DoneButton_Click"/>
+        <Label x:Name="downPercent" Content="0%" HorizontalAlignment="Left" Margin="395,73,0,0" VerticalAlignment="Top"/>
+        <Label Content="Time Elapsed:" Foreground="Snow" HorizontalAlignment="Left" Margin="161,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="0.0 units" x:Name="timeElapsed" Foreground="Snow" HorizontalAlignment="Left" Margin="243,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="Estimated Time Left:" Foreground="Snow" HorizontalAlignment="Left" Margin="474,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="0.0 units" x:Name="timeRemaining" Foreground="Snow" HorizontalAlignment="Left" Margin="590,121,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
