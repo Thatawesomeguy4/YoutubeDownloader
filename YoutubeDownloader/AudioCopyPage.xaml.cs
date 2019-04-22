@@ -1,9 +1,14 @@
-﻿using MediaToolkit;
+﻿using FFMpegCore;
+using FFMpegCore.Enums;
+using FFMpegCore.FFMPEG;
+using MediaToolkit;
 using MediaToolkit.Model;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,15 +38,15 @@ namespace YoutubeDownloader
         private void YesButton_Click(object sender, RoutedEventArgs e)
         {
             //user wants an audio copy, create the copy and close the window once done.
-            var inputFile = new MediaFile { Filename = fileName };
-            var outputFile = new MediaFile { Filename = $"{fileName}.mp3" };
+            var inputFile = fileName;
+            var outputFile = fileName + ".mp3";
+            audioProgress.Maximum = 100;
 
-            using (var engine = new Engine())
-            {
-                engine.GetMetadata(inputFile);
+            FFMpeg ffmpeg = new FFMpeg();
+            ffmpeg.OnProgress += (percentage) => audioProgress.Value = percentage;
 
-                engine.Convert(inputFile, outputFile);
-            }
+            Thread converter = new Thread(new ThreadStart(() => ffmpeg.Mute(VideoInfo.FromPath(inputFile), new FileInfo(outputFile))));
+            converter.Start();
 
             //done, go back.
             NavigationService.GoBack();
