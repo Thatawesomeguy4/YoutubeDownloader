@@ -42,10 +42,13 @@ namespace YoutubeDownloader
             var outputFile = fileName + ".mp3";
             audioProgress.Maximum = 100;
 
+            //set FFMpegCore Binary
+            FFMpegOptions.Configure(new FFMpegOptions { RootDirectory = "C:\\Program Files (x86)\\FFMPEG\\bin" });
+
             FFMpeg ffmpeg = new FFMpeg();
             ffmpeg.OnProgress += (percentage) => audioProgress.Value = percentage;
 
-            Thread converter = new Thread(new ThreadStart(() => ffmpeg.Mute(VideoInfo.FromPath(inputFile), new FileInfo(outputFile))));
+            Thread converter = new Thread(new ThreadStart(() => ffmpeg.ExtractAudio(VideoInfo.FromPath(inputFile), new FileInfo(outputFile))));
             converter.Start();
 
             //done, go back.
