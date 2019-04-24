@@ -10,7 +10,7 @@
 
     <Grid Background="Black">
         <Button Content="Download Video" HorizontalAlignment="Left" Margin="320,74,0,0" VerticalAlignment="Top" Width="156" Height="61" Click="Button_Click"/>
-        <Button Content="Download Audio" HorizontalAlignment="Left" Margin="320,229,0,0" VerticalAlignment="Top" Width="156" Height="61"/>
+        <Button Content="Download Audio" HorizontalAlignment="Left" Margin="320,229,0,0" VerticalAlignment="Top" Width="156" Height="61" IsEnabled="False"/>
 
     </Grid>
 </Page>
