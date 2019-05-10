@@ -12,6 +12,8 @@
         <Label Content="Create an audio only copy of this video?" Foreground="Snow" HorizontalAlignment="Left" Margin="279,33,0,0" VerticalAlignment="Top"/>
         <Button x:Name="yesButton" Content="Yes" HorizontalAlignment="Left" Margin="208,103,0,0" VerticalAlignment="Top" Width="100" Height="33" Click="YesButton_Click"/>
         <Button x:Name="noButton" Content="No" HorizontalAlignment="Left" Margin="462,103,0,0" VerticalAlignment="Top" Width="100" Height="33" Click="NoButton_Click"/>
+        <Label Content="Audio Strip Progress" Foreground="Snow" HorizontalAlignment="Left" Margin="337,187,0,0" VerticalAlignment="Top"/>
+        <ProgressBar x:Name="audioProgress" HorizontalAlignment="Left" Height="31" Margin="10,240,0,0" VerticalAlignment="Top" Width="780"/>
 
     </Grid>
 </Page>
